@@ -65,9 +65,4 @@ def kosaraju(graph):
     return scc_list
 
 
-sat = []
-m = int(input())
-for _ in range(m):
-    s = [int(i) for i in input().split()]
-    sat.append(s)
-print('Possible' if two_sat(sat) else 'Impossible')
+print('Possible' if two_sat([[int(i) for i in input().split()] for _ in range(int(input()))]) else 'Impossible')
