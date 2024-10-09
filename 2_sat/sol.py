@@ -66,3 +66,4 @@ def kosaraju(graph):
 
 
 print('Possible' if two_sat([[int(i) for i in input().split()] for _ in range(int(input()))]) else 'Impossible')
+

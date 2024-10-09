@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+    <Problem title="Эйлеров цикл" lang="ru" tlimit="1" mlimit="1024" author="Н.Добрынский"
+             inputFile="*STDIN" outputFile="*STDOUT" saveInputPrefix="50B" saveOutputPrefix="50B"
+             saveAnswerPrefix="50B">
+        <ProblemStatement>
+            <p>После очередной победы на Кубке Поршня Молния Маквин решил отдохнуть. Вместе с Луиджи и Гвидо он
+                отправился в Италию. Города в Италии состоят из узких улочек,
+                есь множество перекрестков, соединенных дорогами. Однако, не все части городка могут быть соединены
+                между
+                собой, так как некоторые районы могут быть изолированы.
+            </p>
+            <p>
+                Так как Маквин здесь еще не бывал, он хочет проехаться и посмотреть каждый городок целиком. Начать свой
+                путь он может с любого перекрестка. Но есть одно условие, Молния хочет проехать по всем улицам ровно
+                один раз и вернуться в исходную точку, чтобы завершить экскурсию.
+            </p>
+            <p>
+                Ваша задача выяснить, сможет ли Маквин совершить подобный заезд.
+            </p>
+        </ProblemStatement>
+        <InputFormat>
+            <p>В первой строке натуральное число $N$ - количество дорог. В следующих $N$ строках идут целые
+                числа $a_{ij} b_{ij}$- номера перекрестков, соединенных дорогой, по два в каждой строке.
+                Граф является простым и не имеет изолированных вершин.
+            </p>
+        </InputFormat>
+        <OutputFormat>
+            <p>Выведите YES, еcли экскурсия возможна. В противном случае выведите NO.</p>
+        </OutputFormat>
+        <ProblemConstraints>
+            <p>$1 \le N \le 530000$
+                <br/>
+                $0 \le a_{ij} b_{ij} \le 50000$
+            </p>
+        </ProblemConstraints>
+        <Sample rank="1">
+            <SampleIn>3
+                0 1
+                1 2
+                2 3
+            </SampleIn>
+            <SampleOut>YES</SampleOut>
+        </Sample>
+        <Sample rank="2">
+            <SampleIn>4
+                0 1
+                1 2
+                1 3
+                3 2
+            </SampleIn>
+            <SampleOut>NO</SampleOut>
+        </Sample>
+        <Import type="checker" guid="std.strs"/>
+        <Solution src="sol.py" name="sol"/>
+        <Test rank="1-16">
+            <In src="tests/test%0n.in"/>
+            <Out use="sol"/>
+        </Test>
+        <Test rank="17">
+            <In>3
+                0 1
+                1 2
+                2 3
+            </In>
+            <Out>YES</Out>
+        </Test>
+        <Test rank="18">
+            <In>4
+                0 1
+                1 2
+                1 3
+                3 2
+            </In>
+            <Out>NO</Out>
+        </Test>
+    </Problem>
+</CATS>
