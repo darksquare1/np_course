@@ -43,10 +43,11 @@
             <SampleOut>Possible</SampleOut>
         </Sample>
          <Sample rank="2">
-            <SampleIn>3
+            <SampleIn>4
 1 2
 -1
--2
+-2 1 3
+-3
             </SampleIn>
             <SampleOut>Impossible</SampleOut>
         </Sample>
