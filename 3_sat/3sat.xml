@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+    <Problem title="Задание по дискретной математике 2" lang="ru" tlimit="2" mlimit="1024" author="Н.Добрынский"
+             inputFile="*STDIN" outputFile="*STDOUT" saveInputPrefix="50B" saveOutputPrefix="50B" saveAnswerPrefix="50B">
+        <ProblemStatement>
+            <p>Паша успешно сдал задание по дискретной математике, но Иван Дискретович дал ему задание сложнее.
+            </p>
+            <p>В этот раз он дал ему список формул вида: $(x_1 \lor x_2 \lor x_3) \land (\neg x_1 \lor x_3 \lor x_4) \land (\neg x_2 \lor \neg x_3)$, в скобках
+                может содержаться до трех переменных. Задача Паши
+                определить, может ли обращаться формула в истину. В этот раз он точно был уверен, что Паша не справится.
+            </p>
+            <p>
+                Паша обратился к вам снова, помогите ему не попасть на комиссию.
+            </p>
+        </ProblemStatement>
+        <InputFormat>
+            <p>В первой строке натуральное число $M$. В следующих $M$ строках идут целые числа от 1 до $N$ по модулю.</p>
+            <p>Например для формулы $(x_1 \lor x_2 \lor x_3) \land (\neg x_1 \lor x_3 \lor x_2 ) \land (\neg x_2 \lor \neg x_3)$ будет следующий ввод:</p>
+<Data>
+<p>3<br/>
+1 2 3<br/>
+-1 3 2<br/>
+-2 -3</p>
+</Data>
+        </InputFormat>
+        <OutputFormat>
+            <p>Если есть набор переменных, обращающих выражение в истину, то выведите Possible, иначе Impossible.</p>
+        </OutputFormat>
+        <ProblemConstraints>
+            <p>$1 \le M \le 15$
+                <br/>
+                $|N| \le 5$
+                <br/>
+                $N \ne 0$
+            </p>
+        </ProblemConstraints>
+        <Sample rank="1">
+            <SampleIn>3
+1 2 3
+-1 3 2
+-2 -3
+            </SampleIn>
+            <SampleOut>Possible</SampleOut>
+        </Sample>
+         <Sample rank="2">
+            <SampleIn>3
+1 2
+-1
+-2
+            </SampleIn>
+            <SampleOut>Impossible</SampleOut>
+        </Sample>
+        <Import type="checker" guid="std.strs"/>
+        <Solution src="sol.py" name="sol"/>
+        <Generator src="gen.py" name="gen" outputFile="%0n.in" timeLimit="10"/>
+        <Test rank="1-15">
+            <In genAll="1" use="gen"/>
+            <Out use="sol"/>
+        </Test>
+        <Test rank="16">
+            <In>3
+1 2 3
+-1 3 2
+-2 -3</In>
+            <Out>Possible</Out>
+        </Test>
+        <Test rank="17">
+            <In>4
+1 2
+-1
+-2 1 3
+-3</In>
+            <Out>Impossible</Out>
+        </Test>
+    </Problem>
+</CATS>
