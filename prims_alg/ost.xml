@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+    <Problem title="Минимальное остовное дерево" lang="ru" tlimit="2" mlimit="1024" author="Н.Добрынский"
+             inputFile="*STDIN" outputFile="*STDOUT" saveInputPrefix="50B" saveOutputPrefix="50B"
+             saveAnswerPrefix="50B">
+        <ProblemStatement>
+            <p>Вам дан связный, взвешенный, неориентированный граф, ваша задача подсчитать сумму ребер его минимального
+                остовного дерева.
+            </p>
+        </ProblemStatement>
+        <InputFormat>
+            <p>В первой строке натуральное число $N$ - размерность матрицы смежности.
+                Далее идет матрица смежности.
+            </p>
+        </InputFormat>
+        <OutputFormat>
+            <p>Число - сумма ребер минимального остовного дерева</p>
+        </OutputFormat>
+        <ProblemConstraints>
+            <p>$2 \le N \le 1000$
+            </p>
+        </ProblemConstraints>
+        <Sample rank="1">
+            <SampleIn>2
+0 3
+3 0
+            </SampleIn>
+            <SampleOut>3</SampleOut>
+        </Sample>
+        <Sample rank="2">
+            <SampleIn>4
+0 1 0 3
+1 0 4 2
+0 4 0 0
+3 2 0 0
+            </SampleIn>
+            <SampleOut>7</SampleOut>
+        </Sample>
+        <Import type="checker" guid="std.nums"/>
+        <Solution src="sol.py" name="sol"/>
+        <Generator src="gen.py" name="gen" outputFile="%0n.in" timeLimit="10"/>
+        <Test rank="3-18">
+            <In genAll="1" use="gen"/>
+            <Out use="sol"/>
+        </Test>
+        <Test rank="1">
+            <In>2
+0 3
+3 0
+            </In>
+            <Out>3</Out>
+        </Test>
+        <Test rank="2">
+            <In>4
+0 1 0 3
+1 0 4 2
+0 4 0 0
+3 2 0 0
+            </In>
+            <Out>7</Out>
+        </Test>
+    </Problem>
+</CATS>
